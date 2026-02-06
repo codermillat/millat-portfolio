@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -91,7 +92,10 @@ export default function RootLayout({
         <link rel="canonical" href="https://millat.is-a.dev" />
         <meta name="theme-color" content="#0a0a0a" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
