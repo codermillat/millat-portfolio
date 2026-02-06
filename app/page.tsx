@@ -267,22 +267,22 @@ export default function Home() {
                       Kitovo.app →
                     </a>
                   </h3>
-                  <p className="text-gray-500 text-sm">Production EdTech Platform</p>
+                  <p className="text-gray-500 text-sm">Free Receipt Generator Tool</p>
                 </div>
                 <svg className="w-6 h-6 text-gray-600 group-hover:text-blue-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </div>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                Full-stack EdTech platform with 47+ generators and templates for Indian university admissions. 
-                Serves Bangladeshi students with automated receipt generation, fee calculators, and document tools. 
-                Achieved <strong className="text-white">90% keyword coverage</strong> and <strong className="text-white">439ms avg load time</strong> through 
-                aggressive SEO and performance optimization.
+                Professional receipt generator tool with 47+ templates (rent, gas, taxi, donation receipts). 100% private 
+                (client-side processing), works offline, exports to PDF/PNG at 300 DPI. Built for small businesses, freelancers, 
+                and landlords. Features custom branding, automatic calculations, and draft saving. 
+                Achieved <strong className="text-white">90% keyword coverage</strong> and <strong className="text-white">439ms avg load time</strong>.
               </p>
               <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
                 <span>🚀 72 pages deployed</span>
                 <span>⚡ 650KB bundle optimized</span>
-                <span>📊 Google Analytics integrated</span>
+                <span>🔒 100% client-side privacy</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {['Next.js', 'React', 'TypeScript', 'SEO', 'Cloudflare Pages'].map((tech) => (
@@ -314,31 +314,41 @@ export default function Home() {
                 </svg>
               </div>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                <strong className="text-white">arXiv:2504.15610</strong> — Parameter-efficient fine-tuning of large language models 
-                for educational guidance in resource-constrained environments. Research focused on enabling LLM deployment 
-                in developing regions with limited compute infrastructure. <strong className="text-white">3 citations</strong> on 
-                Semantic Scholar and Research Square.
+                <strong className="text-white">arXiv:2504.15610</strong> — Parameter-efficient fine-tuning of Mistral-7B-Instruct 
+                for academic advising in study-abroad contexts. Achieved <strong className="text-white">52.7% reduction in training loss</strong>, 
+                <strong className="text-white">92% accuracy</strong> in domain-specific recommendations, and <strong className="text-white">95% markdown formatting support</strong>. 
+                Published April 2025, indexed on <strong className="text-white">NASA ADS</strong>, <strong className="text-white">Semantic Scholar</strong> (3 citations), 
+                <strong className="text-white">ResearchGate</strong>, <strong className="text-white">Sciety</strong>, <strong className="text-white">University of Warwick</strong>, 
+                and <strong className="text-white">Emergent Mind</strong>.
               </p>
               <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                <span>📄 Published on arXiv</span>
+                <span>📄 18 pages, 6 figures</span>
                 <span>📚 3 citations</span>
-                <span>🔬 Indexed on Semantic Scholar</span>
+                <span>🎓 Indexed on 7+ platforms</span>
               </div>
               <div className="flex flex-wrap gap-2 mb-4">
-                {['LoRA', 'LLM Fine-tuning', 'Resource-constrained AI', 'Educational AI', 'Mistral-7B'].map((tech) => (
+                {['LoRA', 'Mistral-7B', '4-bit Quantization', 'Educational AI', 'Low-resource ML'].map((tech) => (
                   <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-xs rounded border border-gray-800">
                     {tech}
                   </span>
                 ))}
               </div>
-              <div className="flex gap-4 text-sm">
+              <div className="flex gap-4 text-sm flex-wrap">
                 <a 
                   href="https://arxiv.org/abs/2504.15610" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-blue-400 hover:underline"
                 >
-                  Read on arXiv →
+                  arXiv →
+                </a>
+                <a 
+                  href="https://ui.adsabs.harvard.edu/abs/2025arXiv250415610M/abstract" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:underline"
+                >
+                  NASA ADS →
                 </a>
                 <a 
                   href="https://www.semanticscholar.org/paper/A-LoRA-Based-Approach-to-Fine-Tuning-LLMs-for-in-Hosen/d97dacfc533576590fdd01a11dccee3595c3ff5e" 
@@ -349,12 +359,28 @@ export default function Home() {
                   Semantic Scholar →
                 </a>
                 <a 
-                  href="https://www.researchsquare.com/article/rs-8431533/v1" 
+                  href="https://www.researchgate.net/publication/391020006_A_LoRA-Based_Approach_to_Fine-Tuning_LLMs_for_Educational_Guidance_in_Resource-Constrained_Settings" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-blue-400 hover:underline"
                 >
-                  Research Square →
+                  ResearchGate →
+                </a>
+                <a 
+                  href="https://warwick.ac.uk/fac/cross_fac/eduport/edufund/projects/yang/projects/a-lora-based-approach-to-fine-tuning-llms-for-educational-guidance-in-resource-constrained-settings/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:underline"
+                >
+                  Warwick →
+                </a>
+                <a 
+                  href="https://scholar.google.com/citations?user=BtIhSjIAAAAJ&hl=en" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:underline"
+                >
+                  Google Scholar →
                 </a>
               </div>
             </article>
