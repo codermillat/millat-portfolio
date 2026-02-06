@@ -1,27 +1,32 @@
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-[#ededed]">
+      {/* Skip to content link for accessibility */}
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-[#0a0a0a]/80 backdrop-blur-sm border-b border-gray-800 z-50">
+      <nav className="fixed top-0 w-full bg-[#0a0a0a]/80 backdrop-blur-sm border-b border-gray-800 z-50" role="navigation" aria-label="Main navigation">
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="#top" className="text-lg font-semibold hover:text-blue-400 transition">
+          <a href="#top" className="text-lg font-semibold hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-400 rounded transition">
             MD Millat Hosen
           </a>
           <div className="flex gap-6 text-sm">
-            <a href="#about" className="hover:text-blue-400 transition">About</a>
-            <a href="#research" className="hover:text-blue-400 transition">Research</a>
-            <a href="#projects" className="hover:text-blue-400 transition">Projects</a>
-            <a href="#contact" className="hover:text-blue-400 transition">Contact</a>
+            <a href="#about" className="hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-400 rounded transition">About</a>
+            <a href="#research" className="hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-400 rounded transition">Research</a>
+            <a href="#projects" className="hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-400 rounded transition">Projects</a>
+            <a href="#contact" className="hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-400 rounded transition">Contact</a>
           </div>
         </div>
       </nav>
 
-      <div className="max-w-4xl mx-auto px-6 pt-24 pb-16">
+      <div id="main-content" className="max-w-4xl mx-auto px-6 pt-24 pb-16">
         {/* Hero Section */}
         <section id="top" className="min-h-[80vh] flex flex-col justify-center mb-24">
           <div className="space-y-6">
             <div className="space-y-2">
-              <p className="text-blue-400 font-medium">👋 Hi, I'm</p>
+              <p className="text-blue-400 font-medium" aria-label="Greeting">👋 Hi, I'm</p>
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
                 MD Millat Hosen
               </h1>
@@ -38,13 +43,14 @@ export default function Home() {
                 href="https://github.com/codermillat" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition font-medium"
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-400 rounded-lg transition font-medium"
+                aria-label="View GitHub profile"
               >
                 View GitHub
               </a>
               <a 
                 href="#contact"
-                className="px-6 py-3 border border-gray-700 hover:border-gray-600 rounded-lg transition font-medium"
+                className="px-6 py-3 border border-gray-700 hover:border-gray-600 focus-visible:ring-2 focus-visible:ring-blue-400 rounded-lg transition font-medium"
               >
                 Get in Touch
               </a>
