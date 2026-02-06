@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     'arXiv preprint',
     'Published researcher',
     'Semantic Scholar',
+    'ORCID',
     'codermillat'
   ],
   authors: [{ name: 'MD Millat Hosen', url: 'https://millat.is-a.dev' }],
