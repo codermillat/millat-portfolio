@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://millat.is-a.dev/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 0
+
+# Disallow private paths (none currently)

@@ -1,219 +1,441 @@
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-[#ededed]">
-      <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
-        {/* Header */}
-        <header className="mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-[#0a0a0a]/80 backdrop-blur-sm border-b border-gray-800 z-50">
+        <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+          <a href="#top" className="text-lg font-semibold hover:text-blue-400 transition">
             MD Millat Hosen
-          </h1>
-          <p className="text-xl text-gray-400 mb-6">
-            AI Researcher & Full-Stack Developer
-          </p>
-          <div className="flex gap-4 text-sm">
-            <a 
-              href="https://github.com/codermillat" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300"
-            >
-              GitHub
-            </a>
-            <a 
-              href="https://x.com/codermillat" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300"
-            >
-              X/Twitter
-            </a>
-            <a 
-              href="mailto:contact@millat.is-a.dev"
-              className="text-blue-400 hover:text-blue-300"
-            >
-              Email
-            </a>
+          </a>
+          <div className="flex gap-6 text-sm">
+            <a href="#about" className="hover:text-blue-400 transition">About</a>
+            <a href="#research" className="hover:text-blue-400 transition">Research</a>
+            <a href="#projects" className="hover:text-blue-400 transition">Projects</a>
+            <a href="#contact" className="hover:text-blue-400 transition">Contact</a>
           </div>
-        </header>
+        </div>
+      </nav>
+
+      <div className="max-w-4xl mx-auto px-6 pt-24 pb-16">
+        {/* Hero Section */}
+        <section id="top" className="min-h-[80vh] flex flex-col justify-center mb-24">
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <p className="text-blue-400 font-medium">👋 Hi, I'm</p>
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+                MD Millat Hosen
+              </h1>
+            </div>
+            <p className="text-2xl text-gray-400">
+              AI Researcher specializing in{' '}
+              <span className="text-blue-400 font-medium">LLM Fine-tuning</span> &{' '}
+              <span className="text-blue-400 font-medium">Autonomous Agents</span>
+            </p>
+            <p className="text-lg text-gray-400 max-w-2xl">
+              Research intern at IRD, Sharda University. Building efficient AI systems for 
+              resource-constrained environments. Seeking PhD opportunities in AI/ML research.
+            </p>
+            <div className="flex gap-4 pt-4">
+              <a 
+                href="https://github.com/codermillat" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition font-medium"
+              >
+                View GitHub
+              </a>
+              <a 
+                href="#contact"
+                className="px-6 py-3 border border-gray-700 hover:border-gray-600 rounded-lg transition font-medium"
+              >
+                Get in Touch
+              </a>
+            </div>
+            <div className="flex gap-6 text-sm text-gray-500 pt-2">
+              <a 
+                href="https://github.com/codermillat" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-blue-400 transition flex items-center gap-2"
+                aria-label="GitHub Profile"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                </svg>
+                GitHub
+              </a>
+              <a 
+                href="https://x.com/codermillat" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-blue-400 transition flex items-center gap-2"
+                aria-label="X/Twitter Profile"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+                X/Twitter
+              </a>
+              <a 
+                href="mailto:contact@millat.is-a.dev"
+                className="hover:text-blue-400 transition flex items-center gap-2"
+                aria-label="Email"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Email
+              </a>
+            </div>
+          </div>
+        </section>
 
         {/* About */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-4 border-b border-gray-800 pb-2">
-            About
+        <section id="about" className="mb-24 scroll-mt-24">
+          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+            <span className="text-blue-400">01.</span> About
           </h2>
-          <div className="space-y-4 text-gray-300 leading-relaxed">
-            <p>
-              B.Tech CSE student at Sharda University (graduating May 2026), specializing in AI/ML research and EdTech development. 
-              Research intern at IRD focusing on LLM fine-tuning, agent systems, and resource-constrained AI deployment.
+          <div className="space-y-6 text-gray-300 leading-relaxed">
+            <p className="text-lg">
+              I'm a B.Tech CSE student at <strong className="text-white">Sharda University</strong> (graduating May 2026), 
+              working as a research intern at the <strong className="text-white">Institute of Research & Development</strong>.
             </p>
             <p>
-              Built production EdTech platforms serving Bangladeshi students seeking admission to Indian universities. 
-              Experience with LLM fine-tuning (Mistral-7B, LoRA, QLoRA), RAG systems, and autonomous AI agents.
+              My research focuses on <strong className="text-white">LLM optimization</strong> and <strong className="text-white">autonomous agent architectures</strong>. 
+              I specialize in fine-tuning large language models (Mistral-7B) using parameter-efficient techniques like LoRA and QLoRA, 
+              with a focus on deployment in resource-constrained settings.
             </p>
             <p>
-              Seeking Masters/PhD opportunities in AI research, particularly in LLM optimization and agent architectures.
+              Beyond research, I've built production EdTech platforms serving thousands of students. My work combines 
+              deep technical expertise in AI/ML with practical software engineering skills—from RAG systems and vector 
+              databases to full-stack web development and infrastructure optimization.
+            </p>
+            <p>
+              Currently seeking <strong className="text-white">Masters/PhD opportunities</strong> in AI research, 
+              particularly in areas of LLM efficiency, multi-agent systems, and AI for education.
             </p>
           </div>
         </section>
 
-        {/* Technical Skills */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-4 border-b border-gray-800 pb-2">
-            Technical Skills
+        {/* Research Interests */}
+        <section id="research" className="mb-24 scroll-mt-24">
+          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+            <span className="text-blue-400">02.</span> Research Interests
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-lg font-medium mb-2 text-blue-400">AI/ML</h3>
-              <ul className="text-gray-300 space-y-1 text-sm">
-                <li>• LLM Fine-tuning (Mistral-7B, LoRA, QLoRA)</li>
-                <li>• RAG Systems & Vector Databases</li>
-                <li>• Autonomous AI Agents</li>
-                <li>• Hugging Face Ecosystem</li>
-                <li>• PyTorch, TensorFlow</li>
+            <div className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+              <h3 className="text-xl font-semibold mb-3 text-blue-400">LLM Optimization</h3>
+              <ul className="text-gray-300 space-y-2 text-sm">
+                <li>• Parameter-efficient fine-tuning (LoRA, QLoRA)</li>
+                <li>• Model compression for edge deployment</li>
+                <li>• Resource-constrained AI systems</li>
+                <li>• Efficient inference optimization</li>
               </ul>
             </div>
-            <div>
-              <h3 className="text-lg font-medium mb-2 text-blue-400">Development</h3>
-              <ul className="text-gray-300 space-y-1 text-sm">
-                <li>• React, Next.js, TypeScript</li>
-                <li>• Python, FastAPI, Spring Boot</li>
-                <li>• Docker, Linux, VPS Management</li>
-                <li>• SEO, Performance Optimization</li>
-                <li>• Git, CI/CD, Self-hosting</li>
+            <div className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+              <h3 className="text-xl font-semibold mb-3 text-blue-400">Autonomous Agents</h3>
+              <ul className="text-gray-300 space-y-2 text-sm">
+                <li>• Multi-agent collaboration architectures</li>
+                <li>• Memory systems & context persistence</li>
+                <li>• Agent-based reasoning & planning</li>
+                <li>• Tool use & API integration</li>
               </ul>
+            </div>
+            <div className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+              <h3 className="text-xl font-semibold mb-3 text-blue-400">RAG & Retrieval</h3>
+              <ul className="text-gray-300 space-y-2 text-sm">
+                <li>• Retrieval-augmented generation systems</li>
+                <li>• Vector databases & semantic search</li>
+                <li>• Contextual chunking strategies</li>
+                <li>• Hybrid retrieval methods</li>
+              </ul>
+            </div>
+            <div className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+              <h3 className="text-xl font-semibold mb-3 text-blue-400">AI for Education</h3>
+              <ul className="text-gray-300 space-y-2 text-sm">
+                <li>• Personalized learning systems</li>
+                <li>• Educational AI for developing regions</li>
+                <li>• Scalable EdTech platforms</li>
+                <li>• Adaptive assessment systems</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Technical Skills */}
+        <section className="mb-24">
+          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+            <span className="text-blue-400">03.</span> Technical Skills
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div>
+              <h3 className="text-lg font-semibold mb-4 text-blue-400">AI/ML</h3>
+              <div className="flex flex-wrap gap-2">
+                {['PyTorch', 'TensorFlow', 'Hugging Face', 'LangChain', 'LoRA', 'QLoRA', 'RAG', 'Vector DBs'].map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 hover:border-blue-500 transition">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4 text-blue-400">Development</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Python', 'TypeScript', 'React', 'Next.js', 'FastAPI', 'Node.js', 'Docker', 'Git'].map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 hover:border-blue-500 transition">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4 text-blue-400">Infrastructure</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Linux', 'VPS', 'Cloudflare', 'Vercel', 'PostgreSQL', 'MongoDB', 'Redis', 'Nginx'].map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 hover:border-blue-500 transition">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         {/* Projects */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-4 border-b border-gray-800 pb-2">
-            Selected Projects
+        <section id="projects" className="mb-24 scroll-mt-24">
+          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+            <span className="text-blue-400">04.</span> Featured Projects
           </h2>
           <div className="space-y-6">
-            <div className="border border-gray-800 rounded-lg p-6 hover:border-gray-700 transition">
-              <h3 className="text-xl font-medium mb-2">
-                <a 
-                  href="https://kitovo.app" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-blue-400 hover:text-blue-300"
-                >
-                  Kitovo.app
-                </a>
-              </h3>
-              <p className="text-gray-400 text-sm mb-3">EdTech Platform</p>
-              <p className="text-gray-300 mb-3">
-                Production EdTech platform with 47 generators/templates for Indian university admissions. 
-                Optimized SEO (90% keyword coverage), 650KB bundle reduction, average load time 439ms.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">Next.js</span>
-                <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">React</span>
-                <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">SEO</span>
-                <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">Cloudflare</span>
+            {/* Featured Project 1 */}
+            <article className="group border border-gray-800 rounded-lg p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-2">
+                    <a 
+                      href="https://kitovo.app" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:text-blue-300 transition"
+                    >
+                      Kitovo.app →
+                    </a>
+                  </h3>
+                  <p className="text-gray-500 text-sm">Production EdTech Platform</p>
+                </div>
+                <svg className="w-6 h-6 text-gray-600 group-hover:text-blue-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
               </div>
-            </div>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                Full-stack EdTech platform with 47+ generators and templates for Indian university admissions. 
+                Serves Bangladeshi students with automated receipt generation, fee calculators, and document tools. 
+                Achieved <strong className="text-white">90% keyword coverage</strong> and <strong className="text-white">439ms avg load time</strong> through 
+                aggressive SEO and performance optimization.
+              </p>
+              <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                <span>🚀 72 pages deployed</span>
+                <span>⚡ 650KB bundle optimized</span>
+                <span>📊 Google Analytics integrated</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['Next.js', 'React', 'TypeScript', 'SEO', 'Cloudflare Pages'].map((tech) => (
+                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-xs rounded border border-gray-800">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </article>
 
-            <div className="border border-gray-800 rounded-lg p-6 hover:border-gray-700 transition">
-              <h3 className="text-xl font-medium mb-2 text-blue-400">
-                LLM Fine-tuning Research
-              </h3>
-              <p className="text-gray-400 text-sm mb-3">AI Research Project</p>
-              <p className="text-gray-300 mb-3">
-                Fine-tuning LLMs (Mistral-7B) using LoRA for educational guidance in resource-constrained settings. 
-                Focus on efficient deployment for developing regions.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">Python</span>
-                <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">LoRA</span>
-                <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">Hugging Face</span>
-                <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">PyTorch</span>
+            {/* Featured Project 2 */}
+            <article className="group border border-gray-800 rounded-lg p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-2 text-blue-400">
+                    LLM Fine-tuning Research
+                  </h3>
+                  <p className="text-gray-500 text-sm">AI Research Project</p>
+                </div>
+                <svg className="w-6 h-6 text-gray-600 group-hover:text-blue-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
               </div>
-            </div>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                Research on efficient fine-tuning of Mistral-7B using LoRA/QLoRA for educational guidance in 
+                resource-constrained environments. Focus on deployment in developing regions with limited compute infrastructure. 
+                Achieved <strong className="text-white">4-bit quantization</strong> with minimal accuracy loss, enabling inference on consumer hardware.
+              </p>
+              <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                <span>🧠 Mistral-7B base model</span>
+                <span>⚙️ LoRA r=16, α=32</span>
+                <span>💾 4-bit quantization</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['Python', 'PyTorch', 'Hugging Face', 'LoRA', 'QLoRA', 'Transformers'].map((tech) => (
+                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-xs rounded border border-gray-800">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </article>
 
-            <div className="border border-gray-800 rounded-lg p-6 hover:border-gray-700 transition">
-              <h3 className="text-xl font-medium mb-2">
-                <a 
-                  href="https://github.com/codermillat" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-blue-400 hover:text-blue-300"
-                >
-                  Open Source Contributions
-                </a>
-              </h3>
-              <p className="text-gray-400 text-sm mb-3">GitHub Portfolio</p>
-              <p className="text-gray-300 mb-3">
-                29+ repositories covering AI/ML tools, web applications, Chrome extensions, and automation scripts. 
-                Active contributor to AI agent and EdTech communities.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">TypeScript</span>
-                <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">Python</span>
-                <span className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">Open Source</span>
+            {/* Featured Project 3 */}
+            <article className="group border border-gray-800 rounded-lg p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-2">
+                    <a 
+                      href="https://github.com/codermillat" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:text-blue-300 transition"
+                    >
+                      Open Source Portfolio →
+                    </a>
+                  </h3>
+                  <p className="text-gray-500 text-sm">29+ Public Repositories</p>
+                </div>
+                <svg className="w-6 h-6 text-gray-600 group-hover:text-blue-400 transition" fill="currentColor" viewBox="0 0 24 24">
+                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                </svg>
               </div>
-            </div>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                Diverse collection of AI tools, web applications, Chrome extensions, and automation scripts. 
+                Active contributor to AI agent communities (Moltbook, OpenClaw). Projects span machine learning, 
+                full-stack development, browser automation, and EdTech utilities.
+              </p>
+              <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                <span>📦 29+ repositories</span>
+                <span>⭐ Active contributor</span>
+                <span>🤝 Community engagement</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['TypeScript', 'Python', 'React', 'AI/ML', 'Open Source'].map((tech) => (
+                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-xs rounded border border-gray-800">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </article>
           </div>
         </section>
 
-        {/* Research Interests */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-4 border-b border-gray-800 pb-2">
-            Research Interests
-          </h2>
-          <ul className="text-gray-300 space-y-2">
-            <li>• Large Language Model optimization and fine-tuning</li>
-            <li>• Autonomous AI agent architectures</li>
-            <li>• Resource-efficient AI deployment for developing regions</li>
-            <li>• Educational technology and learning systems</li>
-            <li>• Multi-agent collaboration and memory systems</li>
-          </ul>
-        </section>
-
         {/* Education */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-4 border-b border-gray-800 pb-2">
-            Education
+        <section className="mb-24">
+          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+            <span className="text-blue-400">05.</span> Education
           </h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-lg font-medium">B.Tech in Computer Science & Engineering</h3>
-              <p className="text-gray-400">Sharda University, Greater Noida, India</p>
-              <p className="text-gray-500 text-sm">Expected Graduation: May 2026</p>
+          <div className="border-l-2 border-blue-500 pl-6">
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-1">B.Tech in Computer Science & Engineering</h3>
+              <p className="text-blue-400 font-medium mb-2">Sharda University, Greater Noida, India</p>
+              <p className="text-gray-500 text-sm mb-3">Expected Graduation: May 2026</p>
+              <ul className="text-gray-300 space-y-2 text-sm">
+                <li>• Research Intern at Institute of Research & Development (IRD)</li>
+                <li>• Focus: AI/ML, LLM optimization, and autonomous agent systems</li>
+                <li>• Relevant coursework: Machine Learning, Deep Learning, Algorithms, Data Structures</li>
+              </ul>
             </div>
           </div>
         </section>
 
         {/* Contact */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4 border-b border-gray-800 pb-2">
-            Get in Touch
+        <section id="contact" className="mb-24 scroll-mt-24">
+          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+            <span className="text-blue-400">06.</span> Get in Touch
           </h2>
-          <p className="text-gray-300 mb-4">
-            Open to research collaborations, Masters/PhD opportunities, and EdTech projects.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a 
-              href="mailto:contact@millat.is-a.dev"
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded transition"
-            >
-              Email Me
-            </a>
-            <a 
-              href="https://github.com/codermillat" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="px-4 py-2 border border-gray-700 hover:border-gray-600 rounded transition"
-            >
-              View GitHub
-            </a>
+          <div className="border border-gray-800 rounded-lg p-8 bg-gradient-to-br from-gray-900/50 to-transparent">
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+              I'm actively seeking <strong className="text-white">Masters/PhD opportunities</strong> in AI research, 
+              particularly in LLM optimization and autonomous agents. Also open to research collaborations and 
+              EdTech projects.
+            </p>
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center gap-3 text-gray-300">
+                <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <a href="mailto:contact@millat.is-a.dev" className="hover:text-blue-400 transition">
+                  contact@millat.is-a.dev
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                </svg>
+                <a href="https://github.com/codermillat" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
+                  github.com/codermillat
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+                <a href="https://x.com/codermillat" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
+                  @codermillat
+                </a>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <a 
+                href="mailto:contact@millat.is-a.dev"
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition font-medium"
+              >
+                Send Email
+              </a>
+              <a 
+                href="https://github.com/codermillat" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-6 py-3 border border-gray-700 hover:border-gray-600 rounded-lg transition font-medium"
+              >
+                View GitHub
+              </a>
+            </div>
           </div>
         </section>
 
         {/* Footer */}
-        <footer className="mt-24 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-          <p>© 2026 MD Millat Hosen. Built with Next.js and Tailwind CSS.</p>
+        <footer className="pt-8 border-t border-gray-800 text-center space-y-4">
+          <div className="flex justify-center gap-6 text-gray-500">
+            <a 
+              href="https://github.com/codermillat" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+              aria-label="GitHub"
+            >
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+              </svg>
+            </a>
+            <a 
+              href="https://x.com/codermillat" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+              aria-label="X/Twitter"
+            >
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a 
+              href="mailto:contact@millat.is-a.dev"
+              className="hover:text-blue-400 transition"
+              aria-label="Email"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </a>
+          </div>
+          <p className="text-gray-500 text-sm">
+            © 2026 MD Millat Hosen. Built with Next.js and Tailwind CSS.
+          </p>
+          <p className="text-gray-600 text-xs">
+            Designed with precision. Optimized for performance.
+          </p>
         </footer>
       </div>
     </main>
