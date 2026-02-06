@@ -27,13 +27,11 @@ export default function Home() {
               </h1>
             </div>
             <p className="text-2xl text-gray-400">
-              AI Researcher specializing in{' '}
-              <span className="text-blue-400 font-medium">LLM Fine-tuning</span> &{' '}
-              <span className="text-blue-400 font-medium">Autonomous Agents</span>
+              AI Researcher × Web Developer × Digital Marketer
             </p>
             <p className="text-lg text-gray-400 max-w-2xl">
-              Research intern at IRD, Sharda University. Building efficient AI systems for 
-              resource-constrained environments. Seeking Masters opportunities in AI/ML research.
+              Digital Marketing & SEO Intern at Sharda University. Building efficient AI systems, production websites, 
+              and data-driven marketing campaigns. Seeking Masters opportunities in AI/ML research.
             </p>
             <div className="flex gap-4 pt-4">
               <a 
@@ -77,7 +75,7 @@ export default function Home() {
                 X/Twitter
               </a>
               <a 
-                href="mailto:contact@millat.is-a.dev"
+                href="mailto:millat6575@gmail.com"
                 className="hover:text-blue-400 transition flex items-center gap-2"
                 aria-label="Email"
               >
@@ -85,6 +83,18 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 Email
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/codermillat" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-blue-400 transition flex items-center gap-2"
+                aria-label="LinkedIn Profile"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                LinkedIn
               </a>
             </div>
           </div>
@@ -97,22 +107,25 @@ export default function Home() {
           </h2>
           <div className="space-y-6 text-gray-300 leading-relaxed">
             <p className="text-lg">
-              I'm a B.Tech CSE student at <strong className="text-white">Sharda University</strong> (graduating May 2026), 
-              working as a research intern at the <strong className="text-white">Institute of Research & Development</strong>.
+              I'm a B.Tech CSE student at <strong className="text-white">Sharda University</strong> (graduating June 2026), 
+              working as a <strong className="text-white">Digital Marketing & SEO Intern</strong> with the International Relations Division.
             </p>
             <p>
-              My research focuses on <strong className="text-white">LLM optimization</strong> and <strong className="text-white">autonomous agent architectures</strong>. 
+              My work spans <strong className="text-white">AI research</strong>, <strong className="text-white">web development</strong>, and <strong className="text-white">digital marketing</strong>. 
               I specialize in fine-tuning large language models (Mistral-7B) using parameter-efficient techniques like LoRA and QLoRA, 
-              with a focus on deployment in resource-constrained settings.
+              with a focus on deployment in resource-constrained settings. I've authored an arXiv preprint on parameter-efficient finetuning 
+              for educational guidance in low-resource environments.
             </p>
             <p>
-              Beyond research, I've built production EdTech platforms serving thousands of students. My work combines 
-              deep technical expertise in AI/ML with practical software engineering skills—from RAG systems and vector 
-              databases to full-stack web development and infrastructure optimization.
+              Previously worked as a Web Developer at <strong className="text-white">Study International Admission Care (SIAC)</strong> (Feb 2023 - Mar 2024), 
+              building production websites and managing digital marketing campaigns. My technical expertise includes Python, C++, Java, 
+              web development (React/Next.js), WordPress, MySQL, cloud platforms, and server management—alongside practical experience 
+              in SEO, analytics, and performance optimization.
             </p>
             <p>
-              Currently seeking <strong className="text-white">Masters opportunities</strong> in AI research, 
-              particularly in areas of LLM efficiency, multi-agent systems, and AI for education.
+              Currently seeking <strong className="text-white">Masters opportunities</strong> in AI/ML research, 
+              particularly in areas of LLM efficiency, multi-agent systems, and AI for education. Also open to internships 
+              and collaborations where strong fundamentals and measurable impact matter.
             </p>
           </div>
         </section>
@@ -162,10 +175,42 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Experience */}
+        <section className="mb-24">
+          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+            <span className="text-blue-400">04.</span> Experience
+          </h2>
+          <div className="border-l-2 border-blue-500 pl-6 space-y-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-1">Digital Marketing & SEO Intern</h3>
+              <p className="text-blue-400 font-medium mb-2">Sharda University - International Relations Division</p>
+              <p className="text-gray-500 text-sm mb-3">May 2025 - Present (10 months) · Greater Noida, India</p>
+              <ul className="text-gray-300 space-y-2 text-sm">
+                <li>• Support digital outreach initiatives to enhance university's global presence</li>
+                <li>• Manage and grow official YouTube channel "Study at Sharda University"</li>
+                <li>• Conduct SEO and keyword research to improve online visibility</li>
+                <li>• Develop digital marketing campaigns for international student recruitment</li>
+                <li>• Collaborate on social media planning and performance analysis</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-1">Web Developer</h3>
+              <p className="text-blue-400 font-medium mb-2">Study International Admission Care (SIAC)</p>
+              <p className="text-gray-500 text-sm mb-3">Feb 2023 - Mar 2024 (1 year 2 months)</p>
+              <ul className="text-gray-300 space-y-2 text-sm">
+                <li>• Built and launched production website (<a href="https://www.siacabroad.com/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">siacabroad.com</a>)</li>
+                <li>• Strengthened online presence and user experience</li>
+                <li>• Spearheaded marketing initiatives across Facebook, Google, and YouTube</li>
+                <li>• Maintained and optimized web infrastructure</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         {/* Technical Skills */}
         <section className="mb-24">
           <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-            <span className="text-blue-400">03.</span> Technical Skills
+            <span className="text-blue-400">05.</span> Technical Skills
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div>
@@ -204,7 +249,7 @@ export default function Home() {
         {/* Projects */}
         <section id="projects" className="mb-24 scroll-mt-24">
           <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-            <span className="text-blue-400">04.</span> Featured Projects
+            <span className="text-blue-400">06.</span> Featured Projects
           </h2>
           <div className="space-y-6">
             {/* Featured Project 1 */}
@@ -323,18 +368,24 @@ export default function Home() {
         {/* Education */}
         <section className="mb-24">
           <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-            <span className="text-blue-400">05.</span> Education
+            <span className="text-blue-400">07.</span> Education
           </h2>
           <div className="border-l-2 border-blue-500 pl-6">
             <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-1">B.Tech in Computer Science & Engineering</h3>
+              <h3 className="text-xl font-semibold mb-1">Bachelor of Technology (B.Tech.) in Computer Science & Engineering</h3>
               <p className="text-blue-400 font-medium mb-2">Sharda University, Greater Noida, India</p>
-              <p className="text-gray-500 text-sm mb-3">Expected Graduation: May 2026</p>
+              <p className="text-gray-500 text-sm mb-3">June 2022 - June 2026 (Expected)</p>
               <ul className="text-gray-300 space-y-2 text-sm">
-                <li>• Research Intern at Institute of Research & Development (IRD)</li>
-                <li>• Focus: AI/ML, LLM optimization, and autonomous agent systems</li>
+                <li>• Digital Marketing & SEO Intern at International Relations Division</li>
+                <li>• Focus: AI/ML, LLM optimization, web development, and digital marketing</li>
                 <li>• Relevant coursework: Machine Learning, Deep Learning, Algorithms, Data Structures</li>
+                <li>• arXiv preprint author: Parameter-efficient finetuning for educational guidance</li>
               </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-1">Higher Secondary Certificate (HSC) - Science</h3>
+              <p className="text-blue-400 font-medium mb-2">Aftabgonj Govt College</p>
+              <p className="text-gray-500 text-sm">2019 - 2021</p>
             </div>
           </div>
         </section>
@@ -342,21 +393,37 @@ export default function Home() {
         {/* Contact */}
         <section id="contact" className="mb-24 scroll-mt-24">
           <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-            <span className="text-blue-400">06.</span> Get in Touch
+            <span className="text-blue-400">08.</span> Get in Touch
           </h2>
           <div className="border border-gray-800 rounded-lg p-8 bg-gradient-to-br from-gray-900/50 to-transparent">
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
               I'm actively seeking <strong className="text-white">Masters opportunities</strong> in AI research, 
-              particularly in LLM optimization and autonomous agents. Also open to research collaborations and 
-              EdTech projects.
+              particularly in LLM optimization and autonomous agents. Also open to internships, research collaborations, 
+              and EdTech projects where strong fundamentals and measurable impact matter.
             </p>
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3 text-gray-300">
                 <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:contact@millat.is-a.dev" className="hover:text-blue-400 transition">
-                  contact@millat.is-a.dev
+                <a href="mailto:millat6575@gmail.com" className="hover:text-blue-400 transition">
+                  millat6575@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <a href="tel:+919873842259" className="hover:text-blue-400 transition">
+                  +91 98738 42259
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                <a href="https://www.linkedin.com/in/codermillat" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
+                  linkedin.com/in/codermillat
                 </a>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
@@ -378,10 +445,18 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap gap-4">
               <a 
-                href="mailto:contact@millat.is-a.dev"
+                href="mailto:millat6575@gmail.com"
                 className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition font-medium"
               >
                 Send Email
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/codermillat" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-6 py-3 border border-gray-700 hover:border-gray-600 rounded-lg transition font-medium"
+              >
+                View LinkedIn
               </a>
               <a 
                 href="https://github.com/codermillat" 
@@ -421,12 +496,23 @@ export default function Home() {
               </svg>
             </a>
             <a 
-              href="mailto:contact@millat.is-a.dev"
+              href="mailto:millat6575@gmail.com"
               className="hover:text-blue-400 transition"
               aria-label="Email"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/codermillat" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+              aria-label="LinkedIn"
+            >
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
             </a>
           </div>
