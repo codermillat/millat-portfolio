@@ -1,6 +1,40 @@
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-[#ededed]">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "MD Millat Hosen",
+            "alternateName": "Millat Hosen",
+            "url": "https://millat.is-a.dev",
+            "image": "https://millat.is-a.dev/og-image.png",
+            "sameAs": [
+              "https://github.com/codermillat",
+              "https://www.linkedin.com/in/codermillat",
+              "https://x.com/codermillat",
+              "https://orcid.org/0009-0005-7198-9893",
+              "https://scholar.google.com/citations?user=BtIhSjIAAAAJ&hl=en",
+              "https://huggingface.co/millat"
+            ],
+            "jobTitle": "AI Researcher & Digital Marketing Intern",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Sharda University"
+            },
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "Sharda University"
+            },
+            "knowsAbout": ["AI", "Machine Learning", "LLM Fine-tuning", "Web Development", "SEO"],
+            "email": "millat6575@gmail.com"
+          })
+        }}
+      />
+
       {/* Skip to content link for accessibility */}
       <a href="#main-content" className="skip-link">
         Skip to main content

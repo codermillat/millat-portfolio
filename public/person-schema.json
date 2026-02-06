@@ -1,0 +1,45 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "MD Millat Hosen",
+  "alternateName": "Millat Hosen",
+  "url": "https://millat.is-a.dev",
+  "image": "https://millat.is-a.dev/profile.jpg",
+  "sameAs": [
+    "https://github.com/codermillat",
+    "https://www.linkedin.com/in/codermillat",
+    "https://x.com/codermillat",
+    "https://orcid.org/0009-0005-7198-9893",
+    "https://scholar.google.com/citations?user=BtIhSjIAAAAJ&hl=en",
+    "https://huggingface.co/millat",
+    "https://arxiv.org/search/?searchtype=author&query=Hosen%2C+M+M"
+  ],
+  "jobTitle": "AI Researcher",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Sharda University",
+    "url": "https://www.sharda.ac.in"
+  },
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Sharda University",
+    "location": "Greater Noida, India"
+  },
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Large Language Models",
+    "LoRA Fine-tuning",
+    "Web Development",
+    "Digital Marketing",
+    "SEO"
+  ],
+  "email": "millat6575@gmail.com",
+  "telephone": "+919873842259",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Greater Noida",
+    "addressRegion": "Uttar Pradesh",
+    "addressCountry": "IN"
+  }
+}
