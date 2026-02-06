@@ -4,7 +4,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'MD Millat Hosen - AI Researcher & Full-Stack Developer',
-  description: 'AI/ML researcher specializing in LLM fine-tuning (Mistral-7B, LoRA), autonomous agent systems, and EdTech. Published researcher (arXiv:2504.15610, 3 citations). Seeking Masters opportunities in AI research.',
+  description: 'AI/ML researcher specializing in LLM fine-tuning (Mistral-7B, LoRA), autonomous agent systems, and EdTech. Published researcher (arXiv:2504.15610, 3 citations). Digital Marketing & SEO Intern with International Relations Division, Sharda University. Seeking Masters opportunities in AI research.',
   keywords: [
     'MD Millat Hosen',
     'AI researcher',

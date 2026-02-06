@@ -23,7 +23,8 @@ export default function Home() {
             "jobTitle": "AI Researcher & Digital Marketing Intern",
             "worksFor": {
               "@type": "Organization",
-              "name": "Sharda University"
+              "name": "Sharda University",
+              "department": "International Relations Division"
             },
             "alumniOf": {
               "@type": "EducationalOrganization",
@@ -69,8 +70,8 @@ export default function Home() {
               AI Researcher × Web Developer × Digital Marketer
             </p>
             <p className="text-lg text-gray-400 max-w-2xl">
-              Digital Marketing & SEO Intern at Sharda University. Building efficient AI systems, production websites, 
-              and data-driven marketing campaigns. Seeking Masters opportunities in AI/ML research.
+              Digital Marketing & SEO Intern with the International Relations Division at Sharda University. Building efficient AI systems, 
+              production websites, and data-driven marketing campaigns. Seeking Masters opportunities in AI/ML research.
             </p>
             <div className="flex gap-4 pt-4">
               <a 
