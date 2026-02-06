@@ -113,8 +113,9 @@ export default function Home() {
             <p>
               My work spans <strong className="text-white">AI research</strong>, <strong className="text-white">web development</strong>, and <strong className="text-white">digital marketing</strong>. 
               I specialize in fine-tuning large language models (Mistral-7B) using parameter-efficient techniques like LoRA and QLoRA, 
-              with a focus on deployment in resource-constrained settings. I've authored an arXiv preprint on parameter-efficient finetuning 
-              for educational guidance in low-resource environments.
+              with a focus on deployment in resource-constrained settings. I've authored an <strong className="text-white">arXiv preprint</strong> (<a href="https://arxiv.org/abs/2504.15610" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">arXiv:2504.15610</a>) 
+              on parameter-efficient finetuning for educational guidance in low-resource environments, with <strong className="text-white">3 citations</strong> indexed 
+              on Semantic Scholar.
             </p>
             <p>
               Previously worked as a Web Developer at <strong className="text-white">Study International Admission Care (SIAC)</strong> (Feb 2023 - Mar 2024), 
@@ -296,6 +297,110 @@ export default function Home() {
             <article className="group border border-gray-800 rounded-lg p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10">
               <div className="flex items-start justify-between mb-4">
                 <div>
+                  <h3 className="text-2xl font-semibold mb-2">
+                    <a 
+                      href="https://arxiv.org/abs/2504.15610" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:text-blue-300 transition"
+                    >
+                      A LoRA-Based Approach to Fine-Tuning LLMs →
+                    </a>
+                  </h3>
+                  <p className="text-gray-500 text-sm">Published Research • arXiv Preprint</p>
+                </div>
+                <svg className="w-6 h-6 text-gray-600 group-hover:text-blue-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                <strong className="text-white">arXiv:2504.15610</strong> — Parameter-efficient fine-tuning of large language models 
+                for educational guidance in resource-constrained environments. Research focused on enabling LLM deployment 
+                in developing regions with limited compute infrastructure. <strong className="text-white">3 citations</strong> on 
+                Semantic Scholar and Research Square.
+              </p>
+              <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                <span>📄 Published on arXiv</span>
+                <span>📚 3 citations</span>
+                <span>🔬 Indexed on Semantic Scholar</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {['LoRA', 'LLM Fine-tuning', 'Resource-constrained AI', 'Educational AI', 'Mistral-7B'].map((tech) => (
+                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-xs rounded border border-gray-800">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex gap-4 text-sm">
+                <a 
+                  href="https://arxiv.org/abs/2504.15610" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:underline"
+                >
+                  Read on arXiv →
+                </a>
+                <a 
+                  href="https://www.semanticscholar.org/paper/A-LoRA-Based-Approach-to-Fine-Tuning-LLMs-for-in-Hosen/d97dacfc533576590fdd01a11dccee3595c3ff5e" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:underline"
+                >
+                  Semantic Scholar →
+                </a>
+                <a 
+                  href="https://www.researchsquare.com/article/rs-8431533/v1" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:underline"
+                >
+                  Research Square →
+                </a>
+              </div>
+            </article>
+
+            {/* Featured Project 3 */}
+            <article className="group border border-gray-800 rounded-lg p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-2">
+                    <a 
+                      href="https://huggingface.co/millat" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:text-blue-300 transition"
+                    >
+                      Hugging Face Profile →
+                    </a>
+                  </h3>
+                  <p className="text-gray-500 text-sm">ML Models & Datasets</p>
+                </div>
+                <svg className="w-6 h-6 text-gray-600 group-hover:text-blue-400 transition" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.385.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </div>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                Active contributor to the Hugging Face community with machine learning models, datasets, and experimentation. 
+                Focus on LLM fine-tuning workflows, dataset preparation, and model optimization for educational applications.
+              </p>
+              <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                <span>🤗 Hugging Face Profile</span>
+                <span>📊 Models & Datasets</span>
+                <span>🔬 Active contributor</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['Hugging Face', 'Transformers', 'Datasets', 'Model Training', 'ML Workflows'].map((tech) => (
+                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-xs rounded border border-gray-800">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </article>
+
+            {/* Featured Project 4 */}
+            <article className="group border border-gray-800 rounded-lg p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10">
+              <div className="flex items-start justify-between mb-4">
+                <div>
                   <h3 className="text-2xl font-semibold mb-2 text-blue-400">
                     LLM Fine-tuning Research
                   </h3>
@@ -324,7 +429,7 @@ export default function Home() {
               </div>
             </article>
 
-            {/* Featured Project 3 */}
+            {/* Featured Project 4 */}
             <article className="group border border-gray-800 rounded-lg p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10">
               <div className="flex items-start justify-between mb-4">
                 <div>

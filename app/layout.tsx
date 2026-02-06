@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'MD Millat Hosen - AI Researcher & Full-Stack Developer',
-  description: 'AI/ML researcher specializing in LLM fine-tuning (Mistral-7B, LoRA), autonomous agent systems, and EdTech. B.Tech CSE student seeking Masters opportunities in AI research.',
+  description: 'AI/ML researcher specializing in LLM fine-tuning (Mistral-7B, LoRA), autonomous agent systems, and EdTech. Published researcher (arXiv:2504.15610, 3 citations). Seeking Masters opportunities in AI research.',
   keywords: [
     'MD Millat Hosen',
     'AI researcher',
@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     'Research intern',
     'Sharda University',
     'AI research PhD',
+    'arXiv preprint',
+    'Published researcher',
+    'Semantic Scholar',
     'codermillat'
   ],
   authors: [{ name: 'MD Millat Hosen', url: 'https://millat.is-a.dev' }],
@@ -57,7 +60,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'MD Millat Hosen - AI Researcher & Developer',
-    description: 'AI/ML researcher specializing in LLM fine-tuning and EdTech innovation. Seeking Masters opportunities in AI research.',
+    description: 'AI/ML researcher specializing in LLM fine-tuning and EdTech innovation. Published researcher (arXiv:2504.15610). Seeking Masters opportunities in AI research.',
     creator: '@codermillat',
     images: ['/og-image.png'],
   },
