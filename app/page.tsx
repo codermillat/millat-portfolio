@@ -78,14 +78,14 @@ export default function Home() {
                 href="https://github.com/codermillat" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-400 rounded-lg transition font-medium"
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-400 rounded-lg transition font-medium text-white"
                 aria-label="View GitHub profile"
               >
                 View GitHub
               </a>
               <a 
                 href="#contact"
-                className="px-6 py-3 border border-gray-700 hover:border-gray-600 focus-visible:ring-2 focus-visible:ring-blue-400 rounded-lg transition font-medium"
+                className="px-6 py-3 border border-gray-600 hover:border-blue-500 hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-400 rounded-lg transition font-medium text-gray-300"
               >
                 Get in Touch
               </a>
@@ -626,7 +626,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               <a 
                 href="mailto:millat6575@gmail.com"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition font-medium"
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition font-medium text-white"
               >
                 Send Email
               </a>
@@ -634,7 +634,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/codermillat" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-6 py-3 border border-gray-700 hover:border-gray-600 rounded-lg transition font-medium"
+                className="px-6 py-3 border border-gray-600 hover:border-blue-500 hover:text-blue-400 rounded-lg transition font-medium text-gray-300"
               >
                 View LinkedIn
               </a>
@@ -642,7 +642,7 @@ export default function Home() {
                 href="https://github.com/codermillat" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-6 py-3 border border-gray-700 hover:border-gray-600 rounded-lg transition font-medium"
+                className="px-6 py-3 border border-gray-600 hover:border-blue-500 hover:text-blue-400 rounded-lg transition font-medium text-gray-300"
               >
                 View GitHub
               </a>
