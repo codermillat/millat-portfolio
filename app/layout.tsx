@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'MD Millat Hosen - AI Researcher & Full-Stack Developer',
-  description: 'AI/ML researcher specializing in LLM fine-tuning (Mistral-7B, LoRA), autonomous agent systems, and EdTech. B.Tech CSE student seeking PhD opportunities in AI research.',
+  description: 'AI/ML researcher specializing in LLM fine-tuning (Mistral-7B, LoRA), autonomous agent systems, and EdTech. B.Tech CSE student seeking Masters opportunities in AI research.',
   keywords: [
     'MD Millat Hosen',
     'AI researcher',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'MD Millat Hosen - AI Researcher & Developer',
-    description: 'AI/ML researcher specializing in LLM fine-tuning and EdTech innovation',
+    description: 'AI/ML researcher specializing in LLM fine-tuning and EdTech innovation. Seeking Masters opportunities in AI research.',
     creator: '@codermillat',
     images: ['/og-image.png'],
   },

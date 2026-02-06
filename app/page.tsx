@@ -33,7 +33,7 @@ export default function Home() {
             </p>
             <p className="text-lg text-gray-400 max-w-2xl">
               Research intern at IRD, Sharda University. Building efficient AI systems for 
-              resource-constrained environments. Seeking PhD opportunities in AI/ML research.
+              resource-constrained environments. Seeking Masters opportunities in AI/ML research.
             </p>
             <div className="flex gap-4 pt-4">
               <a 
@@ -111,7 +111,7 @@ export default function Home() {
               databases to full-stack web development and infrastructure optimization.
             </p>
             <p>
-              Currently seeking <strong className="text-white">Masters/PhD opportunities</strong> in AI research, 
+              Currently seeking <strong className="text-white">Masters opportunities</strong> in AI research, 
               particularly in areas of LLM efficiency, multi-agent systems, and AI for education.
             </p>
           </div>
@@ -346,7 +346,7 @@ export default function Home() {
           </h2>
           <div className="border border-gray-800 rounded-lg p-8 bg-gradient-to-br from-gray-900/50 to-transparent">
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              I'm actively seeking <strong className="text-white">Masters/PhD opportunities</strong> in AI research, 
+              I'm actively seeking <strong className="text-white">Masters opportunities</strong> in AI research, 
               particularly in LLM optimization and autonomous agents. Also open to research collaborations and 
               EdTech projects.
             </p>
