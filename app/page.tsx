@@ -1,4 +1,39 @@
+"use client"
+
+import { useEffect, useState } from "react"
+
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => {
+      setShowBackToTop(window.scrollY > 400)
+    }
+    window.addEventListener("scroll", onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
+  useEffect(() => {
+    const elements = document.querySelectorAll(".reveal")
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible")
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.15 }
+    )
+
+    elements.forEach((el) => observer.observe(el))
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-[#ededed]">
       {/* JSON-LD Structured Data */}
@@ -47,54 +82,89 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-[#0a0a0a]/80 backdrop-blur-sm border-b border-gray-800 z-50" role="navigation" aria-label="Main navigation">
-        <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
           <a href="#top" className="text-lg font-semibold hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-400 rounded transition">
             MD Millat Hosen
           </a>
-          <div className="flex gap-6 text-sm">
+          <div className="hidden md:flex gap-6 text-sm">
             <a href="#about" className="hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-400 rounded transition">About</a>
             <a href="#research" className="hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-400 rounded transition">Research</a>
             <a href="#projects" className="hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-400 rounded transition">Projects</a>
             <a href="#contact" className="hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-400 rounded transition">Contact</a>
           </div>
+          <button
+            type="button"
+            className="md:hidden inline-flex items-center justify-center rounded-lg border border-gray-700 p-2 text-gray-300 hover:text-white hover:border-blue-500 transition"
+            aria-label="Open menu"
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen(true)}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
       </nav>
 
-      <div id="main-content" className="max-w-4xl mx-auto px-6 pt-24 pb-16">
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-sm flex flex-col">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-gray-800">
+            <span className="text-lg font-semibold text-white">Menu</span>
+            <button
+              type="button"
+              className="inline-flex items-center justify-center rounded-lg border border-gray-700 p-2 text-gray-300 hover:text-white hover:border-blue-500 transition"
+              aria-label="Close menu"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div className="flex-1 flex flex-col items-center justify-center gap-8 text-lg">
+            <a href="#about" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-400 transition">About</a>
+            <a href="#research" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-400 transition">Research</a>
+            <a href="#projects" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-400 transition">Projects</a>
+            <a href="#contact" onClick={() => setIsMenuOpen(false)} className="hover:text-blue-400 transition">Contact</a>
+          </div>
+        </div>
+      )}
+
+      <div id="main-content" className="max-w-4xl mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-16">
         {/* Hero Section */}
-        <section id="top" className="min-h-[80vh] flex flex-col justify-center mb-24">
+        <section id="top" className="min-h-[80vh] flex flex-col justify-center mb-16 sm:mb-24 reveal">
           <div className="space-y-6">
             <div className="space-y-2">
               <p className="text-blue-400 font-medium" aria-label="Greeting">👋 Hi, I'm</p>
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                MD Millat Hosen
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <span className="bg-gradient-to-r from-blue-400 via-blue-300 to-blue-500 text-transparent bg-clip-text">MD Millat Hosen</span>
               </h1>
             </div>
-            <p className="text-2xl text-gray-400">
+            <p className="text-xl sm:text-2xl text-gray-400">
               AI Researcher × Web Developer × Digital Marketer
             </p>
-            <p className="text-lg text-gray-400 max-w-2xl">
+            <p className="text-base sm:text-lg text-gray-400 max-w-2xl">
               Digital Marketing & SEO Intern with the International Relations Division at Sharda University. Building efficient AI systems, 
               production websites, and data-driven marketing campaigns. Seeking Masters opportunities in AI/ML research.
             </p>
-            <div className="flex gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-2 sm:pt-4">
               <a 
                 href="https://github.com/codermillat" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-400 rounded-lg transition font-medium text-white"
+                className="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-400 rounded-lg transition font-medium text-white text-center"
                 aria-label="View GitHub profile"
               >
                 View GitHub
               </a>
               <a 
                 href="#contact"
-                className="px-6 py-3 border border-gray-600 hover:border-blue-500 hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-400 rounded-lg transition font-medium text-gray-300"
+                className="w-full sm:w-auto px-6 py-3 border border-gray-600 hover:border-blue-500 hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-400 rounded-lg transition font-medium text-gray-300 text-center"
               >
                 Get in Touch
               </a>
             </div>
-            <div className="flex gap-6 text-sm text-gray-500 pt-2">
+            <div className="flex flex-wrap gap-3 sm:gap-6 text-xs sm:text-sm text-gray-500 pt-2">
               <a 
                 href="https://github.com/codermillat" 
                 target="_blank" 
@@ -186,12 +256,12 @@ export default function Home() {
         </section>
 
         {/* About */}
-        <section id="about" className="mb-24 scroll-mt-24">
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+        <section id="about" className="mb-16 sm:mb-24 scroll-mt-24 reveal">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-3">
             <span className="text-blue-400">01.</span> About
           </h2>
           <div className="space-y-6 text-gray-300 leading-relaxed">
-            <p className="text-lg">
+            <p className="text-base sm:text-lg">
               I'm a B.Tech CSE student at <strong className="text-white">Sharda University</strong> (graduating June 2026), 
               working as a <strong className="text-white">Digital Marketing & SEO Intern</strong> with the International Relations Division.
             </p>
@@ -217,12 +287,12 @@ export default function Home() {
         </section>
 
         {/* Research Interests */}
-        <section id="research" className="mb-24 scroll-mt-24">
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+        <section id="research" className="mb-16 sm:mb-24 scroll-mt-24 reveal">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-3">
             <span className="text-blue-400">02.</span> Research Interests
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+            <div className="border border-gray-800 rounded-lg p-4 sm:p-6 hover:border-blue-500/50 transition reveal">
               <h3 className="text-xl font-semibold mb-3 text-blue-400">LLM Optimization</h3>
               <ul className="text-gray-300 space-y-2 text-sm">
                 <li>• Parameter-efficient fine-tuning (LoRA, QLoRA)</li>
@@ -231,7 +301,7 @@ export default function Home() {
                 <li>• Efficient inference optimization</li>
               </ul>
             </div>
-            <div className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+            <div className="border border-gray-800 rounded-lg p-4 sm:p-6 hover:border-blue-500/50 transition reveal">
               <h3 className="text-xl font-semibold mb-3 text-blue-400">Autonomous Agents</h3>
               <ul className="text-gray-300 space-y-2 text-sm">
                 <li>• Multi-agent collaboration architectures</li>
@@ -240,7 +310,7 @@ export default function Home() {
                 <li>• Tool use & API integration</li>
               </ul>
             </div>
-            <div className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+            <div className="border border-gray-800 rounded-lg p-4 sm:p-6 hover:border-blue-500/50 transition reveal">
               <h3 className="text-xl font-semibold mb-3 text-blue-400">RAG & Retrieval</h3>
               <ul className="text-gray-300 space-y-2 text-sm">
                 <li>• Retrieval-augmented generation systems</li>
@@ -249,7 +319,7 @@ export default function Home() {
                 <li>• Hybrid retrieval methods</li>
               </ul>
             </div>
-            <div className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+            <div className="border border-gray-800 rounded-lg p-4 sm:p-6 hover:border-blue-500/50 transition reveal">
               <h3 className="text-xl font-semibold mb-3 text-blue-400">AI for Education</h3>
               <ul className="text-gray-300 space-y-2 text-sm">
                 <li>• Personalized learning systems</li>
@@ -262,12 +332,12 @@ export default function Home() {
         </section>
 
         {/* Writing */}
-        <section id="writing" className="mb-24 scroll-mt-24">
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+        <section id="writing" className="mb-16 sm:mb-24 scroll-mt-24 reveal">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-3">
             <span className="text-blue-400">03.</span> Writing
           </h2>
           <div className="space-y-4">
-            <article className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+            <article className="border border-gray-800 rounded-lg p-4 sm:p-6 hover:border-blue-500/50 transition reveal">
               <div className="flex items-start justify-between gap-4 mb-2">
                 <div>
                   <h3 className="text-xl font-semibold">
@@ -287,7 +357,7 @@ export default function Home() {
                 A behind-the-scenes look at designing StudyAbroadGPT to guide students through admissions, scholarships, and visa prep.
               </p>
             </article>
-            <article className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+            <article className="border border-gray-800 rounded-lg p-4 sm:p-6 hover:border-blue-500/50 transition reveal">
               <div className="flex items-start justify-between gap-4 mb-2">
                 <div>
                   <h3 className="text-xl font-semibold">
@@ -307,7 +377,7 @@ export default function Home() {
                 Practical lessons on creating AI tools that work within bandwidth, data, and infrastructure constraints.
               </p>
             </article>
-            <article className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+            <article className="border border-gray-800 rounded-lg p-4 sm:p-6 hover:border-blue-500/50 transition reveal">
               <div className="flex items-start justify-between gap-4 mb-2">
                 <div>
                   <h3 className="text-xl font-semibold">
@@ -327,7 +397,7 @@ export default function Home() {
                 Why open-source collaboration sharpened model quality, UX, and real-world impact.
               </p>
             </article>
-            <article className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+            <article className="border border-gray-800 rounded-lg p-4 sm:p-6 hover:border-blue-500/50 transition reveal">
               <div className="flex items-start justify-between gap-4 mb-2">
                 <div>
                   <h3 className="text-xl font-semibold">
@@ -351,11 +421,11 @@ export default function Home() {
         </section>
 
         {/* Experience */}
-        <section className="mb-24">
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+        <section className="mb-16 sm:mb-24 reveal">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-3">
             <span className="text-blue-400">04.</span> Experience
           </h2>
-          <div className="border-l-2 border-blue-500 pl-6 space-y-8">
+          <div className="border-l-2 border-blue-500 pl-4 sm:pl-6 space-y-8">
             <div>
               <h3 className="text-xl font-semibold mb-1">Digital Marketing & SEO Intern</h3>
               <p className="text-blue-400 font-medium mb-2">Sharda University - International Relations Division</p>
@@ -383,16 +453,16 @@ export default function Home() {
         </section>
 
         {/* Technical Skills */}
-        <section className="mb-24">
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+        <section className="mb-16 sm:mb-24 reveal">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-3">
             <span className="text-blue-400">05.</span> Technical Skills
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div>
               <h3 className="text-lg font-semibold mb-4 text-blue-400">AI/ML</h3>
               <div className="flex flex-wrap gap-2">
                 {['PyTorch', 'TensorFlow', 'Hugging Face', 'LangChain', 'LoRA', 'QLoRA', 'RAG', 'Vector DBs'].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 hover:border-blue-500 transition">
+                  <span key={skill} className="px-3 py-1 bg-gray-800 text-gray-300 text-xs sm:text-sm rounded-full border border-gray-700 hover:border-blue-500 transition">
                     {skill}
                   </span>
                 ))}
@@ -402,7 +472,7 @@ export default function Home() {
               <h3 className="text-lg font-semibold mb-4 text-blue-400">Development</h3>
               <div className="flex flex-wrap gap-2">
                 {['Python', 'TypeScript', 'React', 'Next.js', 'FastAPI', 'Node.js', 'Docker', 'Git'].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 hover:border-blue-500 transition">
+                  <span key={skill} className="px-3 py-1 bg-gray-800 text-gray-300 text-xs sm:text-sm rounded-full border border-gray-700 hover:border-blue-500 transition">
                     {skill}
                   </span>
                 ))}
@@ -412,7 +482,7 @@ export default function Home() {
               <h3 className="text-lg font-semibold mb-4 text-blue-400">Infrastructure</h3>
               <div className="flex flex-wrap gap-2">
                 {['Linux', 'VPS', 'Cloudflare', 'Vercel', 'PostgreSQL', 'MongoDB', 'Redis', 'Nginx'].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700 hover:border-blue-500 transition">
+                  <span key={skill} className="px-3 py-1 bg-gray-800 text-gray-300 text-xs sm:text-sm rounded-full border border-gray-700 hover:border-blue-500 transition">
                     {skill}
                   </span>
                 ))}
@@ -422,13 +492,13 @@ export default function Home() {
         </section>
 
         {/* Projects */}
-        <section id="projects" className="mb-24 scroll-mt-24">
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+        <section id="projects" className="mb-16 sm:mb-24 scroll-mt-24 reveal">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-3">
             <span className="text-blue-400">06.</span> Featured Projects
           </h2>
           <div className="space-y-6">
             {/* Featured Project 1 */}
-            <article className="group border border-gray-800 rounded-lg p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10">
+            <article className="group border border-gray-800 rounded-lg p-4 sm:p-6 md:p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1 hover:scale-[1.01] reveal">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-semibold mb-2">
@@ -453,14 +523,14 @@ export default function Home() {
                 and landlords. Features custom branding, automatic calculations, and draft saving. 
                 Achieved <strong className="text-white">90% keyword coverage</strong> and <strong className="text-white">439ms avg load time</strong>.
               </p>
-              <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+              <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-500 mb-4">
                 <span>🚀 72 pages deployed</span>
                 <span>⚡ 650KB bundle optimized</span>
                 <span>🔒 100% client-side privacy</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {['Next.js', 'React', 'TypeScript', 'SEO', 'Cloudflare Pages'].map((tech) => (
-                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-xs rounded border border-gray-800">
+                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-[10px] sm:text-xs rounded border border-gray-800">
                     {tech}
                   </span>
                 ))}
@@ -468,7 +538,7 @@ export default function Home() {
             </article>
 
             {/* Featured Project 2 */}
-            <article className="group border border-gray-800 rounded-lg p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10">
+            <article className="group border border-gray-800 rounded-lg p-4 sm:p-6 md:p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1 hover:scale-[1.01] reveal">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-semibold mb-2">
@@ -495,14 +565,14 @@ export default function Home() {
                 <strong className="text-white">ResearchGate</strong>, <strong className="text-white">Sciety</strong>, <strong className="text-white">University of Warwick</strong>, 
                 and <strong className="text-white">Emergent Mind</strong>.
               </p>
-              <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+              <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-500 mb-4">
                 <span>📄 18 pages, 6 figures</span>
                 <span>📚 3 citations</span>
                 <span>🎓 Indexed on 7+ platforms</span>
               </div>
               <div className="flex flex-wrap gap-2 mb-4">
                 {['LoRA', 'Mistral-7B', '4-bit Quantization', 'Educational AI', 'Low-resource ML'].map((tech) => (
-                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-xs rounded border border-gray-800">
+                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-[10px] sm:text-xs rounded border border-gray-800">
                     {tech}
                   </span>
                 ))}
@@ -560,7 +630,7 @@ export default function Home() {
             </article>
 
             {/* Featured Project 3 */}
-            <article className="group border border-gray-800 rounded-lg p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10">
+            <article className="group border border-gray-800 rounded-lg p-4 sm:p-6 md:p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1 hover:scale-[1.01] reveal">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-semibold mb-2">
@@ -583,14 +653,14 @@ export default function Home() {
                 Active contributor to the Hugging Face community with machine learning models, datasets, and experimentation. 
                 Focus on LLM fine-tuning workflows, dataset preparation, and model optimization for educational applications.
               </p>
-              <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+              <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-500 mb-4">
                 <span>🤗 Hugging Face Profile</span>
                 <span>📊 Models & Datasets</span>
                 <span>🔬 Active contributor</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {['Hugging Face', 'Transformers', 'Datasets', 'Model Training', 'ML Workflows'].map((tech) => (
-                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-xs rounded border border-gray-800">
+                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-[10px] sm:text-xs rounded border border-gray-800">
                     {tech}
                   </span>
                 ))}
@@ -598,7 +668,7 @@ export default function Home() {
             </article>
 
             {/* Featured Project 4 */}
-            <article className="group border border-gray-800 rounded-lg p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10">
+            <article className="group border border-gray-800 rounded-lg p-4 sm:p-6 md:p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1 hover:scale-[1.01] reveal">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-semibold mb-2 text-blue-400">
@@ -615,14 +685,14 @@ export default function Home() {
                 resource-constrained environments. Focus on deployment in developing regions with limited compute infrastructure. 
                 Achieved <strong className="text-white">4-bit quantization</strong> with minimal accuracy loss, enabling inference on consumer hardware.
               </p>
-              <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+              <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-500 mb-4">
                 <span>🧠 Mistral-7B base model</span>
                 <span>⚙️ LoRA r=16, α=32</span>
                 <span>💾 4-bit quantization</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {['Python', 'PyTorch', 'Hugging Face', 'LoRA', 'QLoRA', 'Transformers'].map((tech) => (
-                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-xs rounded border border-gray-800">
+                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-[10px] sm:text-xs rounded border border-gray-800">
                     {tech}
                   </span>
                 ))}
@@ -630,7 +700,7 @@ export default function Home() {
             </article>
 
             {/* Featured Project 4 */}
-            <article className="group border border-gray-800 rounded-lg p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10">
+            <article className="group border border-gray-800 rounded-lg p-4 sm:p-6 md:p-8 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1 hover:scale-[1.01] reveal">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-semibold mb-2">
@@ -654,14 +724,14 @@ export default function Home() {
                 Active contributor to AI agent communities (Moltbook, OpenClaw). Projects span machine learning, 
                 full-stack development, browser automation, and EdTech utilities.
               </p>
-              <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+              <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-500 mb-4">
                 <span>📦 29+ repositories</span>
                 <span>⭐ Active contributor</span>
                 <span>🤝 Community engagement</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {['TypeScript', 'Python', 'React', 'AI/ML', 'Open Source'].map((tech) => (
-                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-xs rounded border border-gray-800">
+                  <span key={tech} className="px-3 py-1 bg-gray-900 text-gray-400 text-[10px] sm:text-xs rounded border border-gray-800">
                     {tech}
                   </span>
                 ))}
@@ -671,11 +741,11 @@ export default function Home() {
         </section>
 
         {/* Education */}
-        <section className="mb-24">
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+        <section className="mb-16 sm:mb-24 reveal">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-3">
             <span className="text-blue-400">07.</span> Education
           </h2>
-          <div className="border-l-2 border-blue-500 pl-6">
+          <div className="border-l-2 border-blue-500 pl-4 sm:pl-6">
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-1">Bachelor of Technology (B.Tech.) in Computer Science & Engineering</h3>
               <p className="text-blue-400 font-medium mb-2">Sharda University, Greater Noida, India</p>
@@ -696,12 +766,12 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="mb-24 scroll-mt-24">
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+        <section id="contact" className="mb-16 sm:mb-24 scroll-mt-24 reveal">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-3">
             <span className="text-blue-400">08.</span> Get in Touch
           </h2>
-          <div className="border border-gray-800 rounded-lg p-8 bg-gradient-to-br from-gray-900/50 to-transparent">
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+          <div className="border border-gray-800 rounded-lg p-6 sm:p-8 bg-gradient-to-br from-gray-900/50 to-transparent">
+            <p className="text-base sm:text-lg text-gray-300 mb-6 leading-relaxed">
               I'm actively seeking <strong className="text-white">Masters opportunities</strong> in AI research, 
               particularly in LLM optimization and autonomous agents. Also open to internships, research collaborations, 
               and EdTech projects where strong fundamentals and measurable impact matter.
@@ -780,10 +850,10 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="mailto:millat6575@gmail.com"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition font-medium text-white"
+                className="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition font-medium text-white text-center"
               >
                 Send Email
               </a>
@@ -791,7 +861,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/codermillat" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-6 py-3 border border-gray-600 hover:border-blue-500 hover:text-blue-400 rounded-lg transition font-medium text-gray-300"
+                className="w-full sm:w-auto px-6 py-3 border border-gray-600 hover:border-blue-500 hover:text-blue-400 rounded-lg transition font-medium text-gray-300 text-center"
               >
                 View LinkedIn
               </a>
@@ -799,7 +869,7 @@ export default function Home() {
                 href="https://github.com/codermillat" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-6 py-3 border border-gray-600 hover:border-blue-500 hover:text-blue-400 rounded-lg transition font-medium text-gray-300"
+                className="w-full sm:w-auto px-6 py-3 border border-gray-600 hover:border-blue-500 hover:text-blue-400 rounded-lg transition font-medium text-gray-300 text-center"
               >
                 View GitHub
               </a>
@@ -808,8 +878,8 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="pt-8 border-t border-gray-800 text-center space-y-4">
-          <div className="flex justify-center gap-6 text-gray-500">
+        <footer className="pt-8 border-t border-gray-800 text-center space-y-4 reveal">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-gray-500">
             <a 
               href="https://github.com/codermillat" 
               target="_blank" 
@@ -908,6 +978,19 @@ export default function Home() {
           </p>
         </footer>
       </div>
+
+      {showBackToTop && (
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-6 right-6 z-40 rounded-full bg-blue-600/90 text-white shadow-lg shadow-blue-500/20 hover:bg-blue-600 hover:-translate-y-0.5 transition p-3"
+          aria-label="Back to top"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+          </svg>
+        </button>
+      )}
     </main>
   )
 }
