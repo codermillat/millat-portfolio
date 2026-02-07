@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     'Published researcher',
     'Semantic Scholar',
     'ORCID',
+    'Medium',
+    'LeetCode',
+    'Kaggle',
     'codermillat'
   ],
   authors: [{ name: 'MD Millat Hosen', url: 'https://millat.is-a.dev' }],
