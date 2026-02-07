@@ -18,7 +18,11 @@ export default function Home() {
               "https://x.com/codermillat",
               "https://orcid.org/0009-0005-7198-9893",
               "https://scholar.google.com/citations?user=BtIhSjIAAAAJ&hl=en",
-              "https://huggingface.co/millat"
+              "https://huggingface.co/millat",
+              "https://leetcode.com/u/millat/",
+              "https://medium.com/@codermillat",
+              "https://www.kaggle.com/codermillat",
+              "https://about.me/codermillat"
             ],
             "jobTitle": "AI Researcher & Digital Marketing Intern",
             "worksFor": {
@@ -137,6 +141,46 @@ export default function Home() {
                 </svg>
                 LinkedIn
               </a>
+              <a 
+                href="https://medium.com/@codermillat" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-blue-400 transition flex items-center gap-2"
+                aria-label="Medium Profile"
+              >
+                <span className="w-5 h-5 flex items-center justify-center rounded-full border border-gray-600 text-[10px] font-semibold">M</span>
+                Medium
+              </a>
+              <a 
+                href="https://leetcode.com/u/millat/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-blue-400 transition flex items-center gap-2"
+                aria-label="LeetCode Profile"
+              >
+                <span className="w-5 h-5 flex items-center justify-center rounded-full border border-gray-600 text-[10px] font-semibold">LC</span>
+                LeetCode
+              </a>
+              <a 
+                href="https://www.kaggle.com/codermillat" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-blue-400 transition flex items-center gap-2"
+                aria-label="Kaggle Profile"
+              >
+                <span className="w-5 h-5 flex items-center justify-center rounded-full border border-gray-600 text-[10px] font-semibold">K</span>
+                Kaggle
+              </a>
+              <a 
+                href="https://about.me/codermillat" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-blue-400 transition flex items-center gap-2"
+                aria-label="About.me Profile"
+              >
+                <span className="w-5 h-5 flex items-center justify-center rounded-full border border-gray-600 text-[10px] font-semibold">AM</span>
+                about.me
+              </a>
             </div>
           </div>
         </section>
@@ -214,6 +258,95 @@ export default function Home() {
                 <li>• Adaptive assessment systems</li>
               </ul>
             </div>
+          </div>
+        </section>
+
+        {/* Writing */}
+        <section id="writing" className="mb-24 scroll-mt-24">
+          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
+            <span className="text-blue-400">03.</span> Writing
+          </h2>
+          <div className="space-y-4">
+            <article className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+              <div className="flex items-start justify-between gap-4 mb-2">
+                <div>
+                  <h3 className="text-xl font-semibold">
+                    <a
+                      href="https://medium.com/@codermillat"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:text-blue-300 transition"
+                    >
+                      How I'm Building an AI to Help Students Study Abroad
+                    </a>
+                  </h3>
+                  <p className="text-gray-500 text-sm">Apr 2025 • Medium</p>
+                </div>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                A behind-the-scenes look at designing StudyAbroadGPT to guide students through admissions, scholarships, and visa prep.
+              </p>
+            </article>
+            <article className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+              <div className="flex items-start justify-between gap-4 mb-2">
+                <div>
+                  <h3 className="text-xl font-semibold">
+                    <a
+                      href="https://medium.com/@codermillat"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:text-blue-300 transition"
+                    >
+                      AI Innovation in Developing Countries: Building StudyAbroadGPT
+                    </a>
+                  </h3>
+                  <p className="text-gray-500 text-sm">Sep 2025 • Medium</p>
+                </div>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Practical lessons on creating AI tools that work within bandwidth, data, and infrastructure constraints.
+              </p>
+            </article>
+            <article className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+              <div className="flex items-start justify-between gap-4 mb-2">
+                <div>
+                  <h3 className="text-xl font-semibold">
+                    <a
+                      href="https://medium.com/@codermillat"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:text-blue-300 transition"
+                    >
+                      How I Learned to Build Better AI by Giving It Away: Open Source
+                    </a>
+                  </h3>
+                  <p className="text-gray-500 text-sm">Sep 2025 • Medium</p>
+                </div>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Why open-source collaboration sharpened model quality, UX, and real-world impact.
+              </p>
+            </article>
+            <article className="border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 transition">
+              <div className="flex items-start justify-between gap-4 mb-2">
+                <div>
+                  <h3 className="text-xl font-semibold">
+                    <a
+                      href="https://medium.com/@codermillat"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:text-blue-300 transition"
+                    >
+                      The Market Gap in AI & EdTech for Developing Countries
+                    </a>
+                  </h3>
+                  <p className="text-gray-500 text-sm">Sep 2025 • Medium</p>
+                </div>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                A research-driven view of unmet learner needs and the product opportunities emerging in EdTech.
+              </p>
+            </article>
           </div>
         </section>
 
@@ -607,6 +740,30 @@ export default function Home() {
                 </a>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
+                <span className="w-5 h-5 flex items-center justify-center rounded-full border border-blue-400 text-[10px] font-semibold text-blue-400">M</span>
+                <a href="https://medium.com/@codermillat" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
+                  medium.com/@codermillat
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <span className="w-5 h-5 flex items-center justify-center rounded-full border border-blue-400 text-[10px] font-semibold text-blue-400">LC</span>
+                <a href="https://leetcode.com/u/millat/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
+                  leetcode.com/u/millat
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <span className="w-5 h-5 flex items-center justify-center rounded-full border border-blue-400 text-[10px] font-semibold text-blue-400">K</span>
+                <a href="https://www.kaggle.com/codermillat" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
+                  kaggle.com/codermillat
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <span className="w-5 h-5 flex items-center justify-center rounded-full border border-blue-400 text-[10px] font-semibold text-blue-400">AM</span>
+                <a href="https://about.me/codermillat" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
+                  about.me/codermillat
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
                 <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
@@ -694,6 +851,42 @@ export default function Home() {
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
+            </a>
+            <a 
+              href="https://medium.com/@codermillat" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+              aria-label="Medium"
+            >
+              <span className="w-6 h-6 flex items-center justify-center rounded-full border border-gray-600 text-[10px] font-semibold">M</span>
+            </a>
+            <a 
+              href="https://leetcode.com/u/millat/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+              aria-label="LeetCode"
+            >
+              <span className="w-6 h-6 flex items-center justify-center rounded-full border border-gray-600 text-[10px] font-semibold">LC</span>
+            </a>
+            <a 
+              href="https://www.kaggle.com/codermillat" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+              aria-label="Kaggle"
+            >
+              <span className="w-6 h-6 flex items-center justify-center rounded-full border border-gray-600 text-[10px] font-semibold">K</span>
+            </a>
+            <a 
+              href="https://about.me/codermillat" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+              aria-label="about.me"
+            >
+              <span className="w-6 h-6 flex items-center justify-center rounded-full border border-gray-600 text-[10px] font-semibold">AM</span>
             </a>
             <a 
               href="https://orcid.org/0009-0005-7198-9893" 
