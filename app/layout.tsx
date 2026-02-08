@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 
@@ -108,23 +107,23 @@ export default function RootLayout({
 
         {/* PWA manifest */}
         <link rel="manifest" href="/site.webmanifest" />
+
+        {/* Google Analytics - moved to head for verification */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZK2K44H29M"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-ZK2K44H29M');
+            `,
+          }}
+        />
       </head>
       <body>
         {children}
         <Analytics />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-ZK2K44H29M"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-ZK2K44H29M');
-          `}
-        </Script>
       </body>
     </html>
   )
